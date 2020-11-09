@@ -1,27 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-function Greeting() {
+function BookList() {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => <h2>John Doe</h2>;
-
-const Message = () => {
-  return <p>This is my message</p>;
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
 };
 
-// const Greeting = () => {
-//   return React.createElement(
-//     "div",
-//     {},
-//     React.createElement("h1", {}, "hello world")
-//   );
-// };
+const Image = () => (
+  <img
+    src="https://images-na.ssl-images-amazon.com/images/I/91gGvLMWwhL._AC_UL200_SR200,200_.jpg"
+    alt=""
+  />
+);
 
-ReactDOM.render(<Greeting />, document.getElementById("root"));
+const Title = () => <h1>A Wealth of Pigeons: A Cartoon Collection</h1>;
+
+const Author = () => <h4>Steve Martin</h4>;
+
+ReactDOM.render(<BookList />, document.getElementById("root"));
