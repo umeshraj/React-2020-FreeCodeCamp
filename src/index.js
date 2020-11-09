@@ -4,16 +4,17 @@ import ReactDOM from "react-dom";
 function Greeting() {
   return (
     <div>
-      <h4>This is Umesh and this is my first component</h4>
-      <ul>
-        <li>
-          <a href="#">Hello, World!</a>
-        </li>
-      </ul>
-      <img src="" alt="" />
+      <Person />
+      <Message />
     </div>
   );
 }
+
+const Person = () => <h2>John Doe</h2>;
+
+const Message = () => {
+  return <p>This is my message</p>;
+};
 
 // const Greeting = () => {
 //   return React.createElement(
