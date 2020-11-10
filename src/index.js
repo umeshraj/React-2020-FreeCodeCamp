@@ -28,13 +28,17 @@ const Book = () => {
 
 const Image = () => (
   <img
-    src="https://images-na.ssl-images-amazon.com/images/I/91gGvLMWwhL._AC_UL200_SR200,200_.jpg"
+    src="https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg"
     alt=""
   />
 );
 
 const Title = () => <h1>A Wealth of Pigeons: A Cartoon Collection</h1>;
 
-const Author = () => <h4>Steve Martin</h4>;
+const Author = () => (
+  <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+    Steve Martin
+  </h4>
+);
 
 ReactDOM.render(<BookList />, document.getElementById("root"));
