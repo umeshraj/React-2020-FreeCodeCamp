@@ -5,40 +5,28 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 // Vars
-const firstBook = {
-  img:
-    "https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg",
-  title: "A Wealth of Pigeons: A Cartoon Collection",
-  author: "Steve Martin",
-};
+const books = [
+  {
+    img:
+      "https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg",
+    title: "A Wealth of Pigeons: A Cartoon Collection",
+    author: "Steve Martin",
+  },
+  {
+    img:
+      "https://images-na.ssl-images-amazon.com/images/I/81GeAcdMCsL._AC_UL200_SR200,200_.jpg",
+    title: "Humans",
+    author: "Brandon Stanton",
+  },
+];
 
-const secondBook = {
-  img:
-    "https://images-na.ssl-images-amazon.com/images/I/81GeAcdMCsL._AC_UL200_SR200,200_.jpg",
-  title: "Humans",
-  author: "Brandon Stanton",
-};
-
+const names = ["john", "peter", "susan"];
+const newNames = names.map((name) => {
+  return <h1>Hello, world!</h1>;
+});
+console.log(newNames);
 function BookList() {
-  return (
-    <section className="booklist">
-      <Book
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author}
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-          saepe!
-        </p>
-      </Book>
-      <Book
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author}
-      />
-    </section>
-  );
+  return <section className="booklist">{newNames}</section>;
 }
 
 const Book = (props) => {
@@ -48,7 +36,6 @@ const Book = (props) => {
       <img src={img} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
-      {props.children}
     </article>
   );
 };
