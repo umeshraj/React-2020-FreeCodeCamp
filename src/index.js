@@ -18,19 +18,26 @@ const books = [
     title: "Humans",
     author: "Brandon Stanton",
   },
+  {
+    img:
+      "https://images-na.ssl-images-amazon.com/images/I/71Ks%2B8mKq2L._AC_UL200_SR200,200_.jpg",
+    title: "The Deep End (Diary of a Wimpy Kid Book 15)",
+    author: "Jeff Kinney",
+  },
 ];
 
-const names = ["john", "peter", "susan"];
-const newNames = names.map((name) => {
-  return <h1>Hello, world!</h1>;
-});
-console.log(newNames);
 function BookList() {
-  return <section className="booklist">{newNames}</section>;
+  return (
+    <section className="booklist">
+      {books.map((book) => {
+        return <Book book={book}></Book>;
+      })}
+    </section>
+  );
 }
 
 const Book = (props) => {
-  const { img, title, author } = props;
+  const { img, title, author } = props.book;
   return (
     <article className="book">
       <img src={img} alt="" />
