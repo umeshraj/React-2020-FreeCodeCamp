@@ -9,7 +9,7 @@ const books = [
   {
     id: 1,
     img:
-      "https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/91gGvLMWwhL._AC_UL200_SR200,200_.jpg",
     title: "A Wealth of Pigeons: A Cartoon Collection",
     author: "Steve Martin",
   },
@@ -49,7 +49,12 @@ const Book = (props) => {
     console.log(author);
   };
   return (
-    <article className="book">
+    <article
+      className="book"
+      onMouseOver={() => {
+        console.log(title);
+      }}
+    >
       <img src={img} alt="" />
       <h1 onClick={() => console.log(title)}>{title}</h1>
       <h4>{author}</h4>
