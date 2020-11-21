@@ -21,6 +21,13 @@ const reducer = (state, action) => {
     return { ...state, isModalOpen: false };
   }
 
+  if (action.type === "REMOVE_ITEM") {
+    const newPeople = state.people.filter(
+      (person) => person.id !== action.payload
+    );
+    return { ...state, people: newPeople };
+  }
+
   throw new Error("no matching action type");
 };
 const defaultState = {
@@ -66,8 +73,15 @@ const Index = () => {
       {/* showpeople */}
       {state.people.map((person) => {
         return (
-          <div key={person.id}>
+          <div key={person.id} className="item">
             <h4>{person.name}</h4>
+            <button
+              onClick={() =>
+                dispatch({ type: "REMOVE_ITEM", payload: person.id })
+              }
+            >
+              Remove
+            </button>
           </div>
         );
       })}
