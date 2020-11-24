@@ -12,18 +12,24 @@ import Navbar from "./Navbar";
 const ReactRouterSetup = () => {
   return (
     <Router>
-      {/* Home */}
-      <Route exact path="/">
-        <Home />
-      </Route>
-      {/* About */}
-      <Route path="/about">
-        <About />
-      </Route>
-      {/* People */}
-      <Route path="/people">
-        <People />
-      </Route>
+      <Switch>
+        {/* Home */}
+        <Route exact path="/">
+          <Home />
+        </Route>
+        {/* About */}
+        <Route path="/about">
+          <About />
+        </Route>
+        {/* People */}
+        <Route path="/people">
+          <People />
+        </Route>
+        {/* Error page */}
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
     </Router>
   );
 };
