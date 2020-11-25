@@ -12,6 +12,7 @@ import Navbar from "./Navbar";
 const ReactRouterSetup = () => {
   return (
     <Router>
+      <Navbar />
       <Switch>
         {/* Home */}
         <Route exact path="/">
